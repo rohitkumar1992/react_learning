@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Loader from './component/loader';
 import './App.css';
 
 class UserList extends Component {
@@ -8,21 +9,21 @@ class UserList extends Component {
 	    isLoading:false
 	}
 
-	componentDidMount()
-	  {
+	componentDidMount() {
 	    this.getData();
 	    console.log('2');
-	  }
-	  getData=()=>{
+	}
+
+	getData=()=>{
 	  	console.log('3');
-	    axios.get("http://192.168.27.119/Shantanu_project/OTT_LIVE_WORK/LARAVEL_WORK/NEW_PLANETSHARE/Planetshare/public/api/getHomeData").then((res)=>{	 
-	    	if(res.data.success==1) {         
-		    	this.setState({userList:res.data.gallery_list[0].listing});
+	    axios.get("http://api.planetshare.in/public/api/getHomeData").then((res)=>{	 
+	    	if(res.data.success===1) {         
+		    	this.setState({userList:res.data.gallery_list[1].listing});
 		    	setTimeout(()=>this.setState({isLoading:true}),1000)
 		    	console.log('3');
 		    }
 	    })
-	  }
+	}
 
 	render() {
 		console.log('1');
@@ -30,7 +31,7 @@ class UserList extends Component {
 		const listContent=(userList.length >0?userList.map((res,key)=>{
 			return(
 				<li key={key}>
-					<img src={res.large_thumb} />
+					<img src={res.large_thumb} alt="" />
 				</li>
 			)
 		}):<li><span class="noresult">No Result Found</span></li>
@@ -51,7 +52,7 @@ class UserList extends Component {
 			)
 		}
 		else {
-		    return(<div id="content">not found list</div>);
+		    return(<div id="content"><Loader/></div>);
 		}
 	}
 }
@@ -83,11 +84,10 @@ class ConentList extends Component {
 		}
 	}
 	render() {
-		return(
-			<div>
+		return(<div>
 				<table border="1">
 					<tbody>
-						{this.state.data.map((person, i) => <TableRow key= {i} data={person} /> )}
+						{this.state.data.map((person, i)=><TableRow key={i} data={person} />)}
 					</tbody>
 				</table>
 			</div>

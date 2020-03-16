@@ -23,7 +23,11 @@
   to { transform: rotate(360deg); }
 }
 
+* { box-sizing: border-box; }
+table { width: 100%; }
 .container { max-width: 1200px; margin: 0 auto; }
 ul.img_list { width: 100%; overflow: hidden; max-width: 1200px; margin: 0 auto; }
 ul.img_list li { width: 20%; padding: 10px 10px; display: inline-block; float:left; }
 ul.img_list li img { max-width:100%; width: 100%; height: 200px; }
+
+.loader_cont { text-align: center; display: flex; flex-flow: row wrap; justify-content: center; align-items: center; height: 100vh; }

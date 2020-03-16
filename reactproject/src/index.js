@@ -1,9 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserList from './userlist';
+import App from './App';
 import './index.css';
+import {BrowserRouter as Router} from 'react-router-dom';
+class MainContainer extends React.Component{
+	render() {
+		return(
+			<Router>
+				<App />
+			</Router>
+		)
+	}
+}
 
 ReactDOM.render(
-  <UserList />,
-  document.getElementById('root')
+	<MainContainer />,
+	document.getElementById('root')
 );
