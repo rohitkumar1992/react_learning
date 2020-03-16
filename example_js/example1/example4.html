@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Planetshare">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Planetshare">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function chrcval() {
+            console.log('1');
+            var keyval;
+            console.log('2');
+            for(keyval=0; keyval<=4; keyval++){
+                console.log('3');
+                var chval;
+                for(chval=0; chval<=keyval; chval++) {
+                    console.log('4');
+                    document.write(String.fromCharCode(65+chval));
+                }
+                console.log('5');
+                document.write('<br>');
+            }
+        }
+        chrcval();
+    </script>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+
+</html>

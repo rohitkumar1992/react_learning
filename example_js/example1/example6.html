@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Planetshare">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Planetshare">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function startriangle(n) {
+        	var star;
+        	console.log('1');
+        	for(star=0; star<5; star++) {
+        		console.log('2');
+        		var strval;
+        		for(strval=0; strval<=n; strval++) {
+                    console.log('3');
+        			if(strval<4-star || strval>4+star) {
+                        console.log('4');
+        				document.write("&nbsp;&nbsp;");
+        			}
+                    else if(star%2==0 && strval%2!==0 || star%2!==0 && strval%2==0) {
+                        console.log('5');
+                        document.write("&nbsp;&nbsp;");
+                    }
+        			else {
+                        console.log('6');
+        				document.write("*");
+        			}
+        		}
+        		console.log('7');
+        		document.write("<br>");
+        	}
+        }
+        startriangle(8);
+    </script>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+
+</html>

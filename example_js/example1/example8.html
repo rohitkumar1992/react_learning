@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Planetshare">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Planetshare">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function printnumber(n) {
+            console.log("1");
+            var num;
+            for(num=0; num<n; num++){
+                console.log("2");
+                var numval;
+                for(numval=0; numval<n; numval++) {
+                    console.log("3");
+                    if(numval>=num) {
+                    	console.log("4");
+                    	document.write(n-numval);
+                    	document.write("&nbsp;");
+                    }
+                    else {
+                    	console.log("7");
+                    	document.write("&nbsp;");
+                    }
+                }
+                console.log("6");
+                document.write("<br>");
+            }
+        }
+        printnumber(5);
+    </script>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+
+</html>
